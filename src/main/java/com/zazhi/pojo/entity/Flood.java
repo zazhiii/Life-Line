@@ -7,7 +7,7 @@ import java.sql.Date;
 
 @Setter
 @Getter
-public class Floor {
+public class Flood {
     private Long id;
 
     private Date startDate; // 开始日期

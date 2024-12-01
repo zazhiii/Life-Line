@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class NearbyFloorDTO {
+public class NearbyLandslideDTO {
     private double latitude; // 纬度
     private double longitude; // 经度
     private double radius; // 半径km
