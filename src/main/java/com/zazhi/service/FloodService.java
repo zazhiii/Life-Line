@@ -21,7 +21,7 @@ public class FloodService {
      * @param nearByFloodDTO
      * @return
      */
-    public List<Flood> findNearbyFloors(NearbyFloodDTO nearByFloodDTO) {
-        return floodMapper.findNearbyFloors(nearByFloodDTO);
+    public List<Flood> findNearbyFloods(NearbyFloodDTO nearByFloodDTO) {
+        return floodMapper.findNearbyFloods(nearByFloodDTO);
     }
 }

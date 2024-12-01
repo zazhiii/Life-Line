@@ -15,5 +15,5 @@ public interface FloodMapper {
      * @param nearByFloodDTO
      * @return
      */
-    List<Flood> findNearbyFloors(NearbyFloodDTO nearByFloodDTO);
+    List<Flood> findNearbyFloods(NearbyFloodDTO nearByFloodDTO);
 }

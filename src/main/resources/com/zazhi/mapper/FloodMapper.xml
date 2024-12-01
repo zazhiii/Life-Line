@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zazhi.mapper.FloodMapper">
-    <select id="findNearbyFloors" parameterType="com.zazhi.pojo.dto.NearbyFloodDTO" resultType="com.zazhi.pojo.entity.Flood">
+    <select id="findNearbyFloods" parameterType="com.zazhi.pojo.dto.NearbyFloodDTO" resultType="com.zazhi.pojo.entity.Flood">
         SELECT
         *
-        FROM floor_1989_2017 f
+        FROM flood
         WHERE
         (6371 * ACOS(
         COS(RADIANS(#{latitude})) * COS(RADIANS(latitude)) * COS(RADIANS(longitude) - RADIANS(#{longitude}))

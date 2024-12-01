@@ -14,19 +14,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping("/api/floor")
+@RequestMapping("/api/flood")
 @Tag(name = "洪水")
 public class FloodController {
 
     private static final Logger log = LoggerFactory.getLogger(FloodController.class);
 
     @Autowired
-    private FloodService floorService;
+    private FloodService floodService;
 
     @PostMapping
     @Operation(summary = "获取附近洪水信息")
-    public Result<List<Flood>> getNearbyFloors(@RequestBody NearbyFloodDTO nearByFloodDTO) {
-        log.info("getNearbyFloors: {}", nearByFloodDTO);
-        return Result.success(floorService.findNearbyFloors(nearByFloodDTO));
+    public Result<List<Flood>> getNearbyFloods(@RequestBody NearbyFloodDTO nearByFloodDTO) {
+        log.info("getNearbyFloods: {}", nearByFloodDTO);
+        return Result.success(floodService.findNearbyFloods(nearByFloodDTO));
     }
 }
