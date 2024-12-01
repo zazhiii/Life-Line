@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lifeline.mapper.EarthquakeMapper">
+    <select id="findNearbyLocations" parameterType="com.lifeline.pojo.dto.NearbyEarthquakeDTO" resultType="com.lifeline.pojo.entity.Earthquake">
+        SELECT *
+        FROM earthquake
+        WHERE
+        (6371 * ACOS(
+        COS(RADIANS(#{latitude})) * COS(RADIANS(latitude)) * COS(RADIANS(longitude) - RADIANS(#{longitude}))
+        + SIN(RADIANS(#{latitude})) * SIN(RADIANS(latitude))
+        )) &lt;= #{radius}
+        AND earthquakeTime >= DATE_SUB(NOW(), INTERVAL #{years} YEAR)
+    </select>
+
+</mapper>
