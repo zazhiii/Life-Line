@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zazhi.mapper.FloorMapper">
+    <select id="findNearbyFloors" parameterType="com.zazhi.pojo.dto.NearbyFloorDTO" resultType="com.zazhi.pojo.entity.Floor">
+        SELECT
+        *
+        FROM floor_1989_2017 f
+        WHERE
+        (6371 * ACOS(
+        COS(RADIANS(#{latitude})) * COS(RADIANS(latitude)) * COS(RADIANS(longitude) - RADIANS(#{longitude}))
+        + SIN(RADIANS(#{latitude})) * SIN(RADIANS(latitude))
+        )) &lt;= #{radius}
+        AND start_date >= DATE_SUB(NOW(), INTERVAL #{year} YEAR)
+    </select>
+
+</mapper>

@@ -3,16 +3,24 @@ package com.zazhi.pojo.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
+
 @Setter
 @Getter
-public class Floor { // 将类名改为首字母大写，符合 Java 命名规范
+public class Floor {
     private Long id;
 
-    private String WaterTime;
+    private Date startDate; // 开始日期
 
-    private double WaterLat;
+    private Date endDate; // 结束日期
 
-    private double WaterLon;
+    private String country; // 国家
 
-    // 其他字段
+    private Double latitude; // 纬度
+
+    private Double longitude; // 经度
+
+    private Integer TotalDeat; // 总死亡人数
+
+    private Integer TotalAffe; // 总受伤人数
 }
