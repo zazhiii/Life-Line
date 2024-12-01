@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zazhi.mapper.FireMapper">
+    <select id="findNearbyFires" parameterType="com.zazhi.pojo.dto.NearbyFireDTO" resultType="com.zazhi.pojo.entity.Fire">
+        SELECT *
+        FROM fire
+        WHERE
+        (6371 * ACOS(
+        COS(RADIANS(#{latitude})) * COS(RADIANS(latitude)) * COS(RADIANS(longitude) - RADIANS(#{longitude}))
+        + SIN(RADIANS(#{latitude})) * SIN(RADIANS(latitude))
+        )) &lt;= #{radius}
+        AND acq_date >= DATE_SUB(NOW(), INTERVAL #{year} YEAR)
+    </select>
+
+</mapper>

@@ -15,7 +15,7 @@ public class EarthquakeService {
     EarthquakeMapper earthquakeMapper;
 
     public List<Earthquake> findNearbyEarthquakes(NearbyEarthquakeDTO nearbyEarthquakeDTO) {
-        return earthquakeMapper.findNearbyLocations(nearbyEarthquakeDTO);
+        return earthquakeMapper.findNearbyEarthquake(nearbyEarthquakeDTO);
     }
 
     /**

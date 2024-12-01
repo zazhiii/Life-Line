@@ -23,5 +23,5 @@ public interface EarthquakeMapper {
      * @param nearbyEarthquakeDTO
      * @return
      */
-    List<Earthquake> findNearbyLocations(NearbyEarthquakeDTO nearbyEarthquakeDTO);
+    List<Earthquake> findNearbyEarthquake(NearbyEarthquakeDTO nearbyEarthquakeDTO);
 }
