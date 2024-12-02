@@ -13,7 +13,7 @@
 ## 部署
 ### 克隆仓库
 ```bash
-git clone https://github.com/yourusername/your-repository.git
+git clone https://github.com/zazhiii/Life-Line
 ```
 ### 初始化数据
 创建数据库
